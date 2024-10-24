@@ -1,46 +1,45 @@
-# Understanding DOS Attacks:
+# DOS Bugs Report 
 
-<h2>What is DOS.<br></h2>
-Denial of Service attacks target computer systems and networks,  Attacker makes unnecessary requests to cause a disruption in the service provided . In blockchain " Denial of Service attack can significantly delay any contract'sfunctionality by making it very gas-intensive therefore, it is expensive to use" . 
-<br> <br> 
-If the function  exceeds the block gas limit, it causes the DOS to happen. When causing a function to not work properly as it intend to means that there is a DOS.
 
-<h2>Some Important areas to look for Dos attacks. <br> </h2>
+### Description : 
+ Causing a function or contract not being able to Call. OR Preventing the transaction to run( Like : It can caused also by an external call failing).
+<hr>
 
-* 1.Unbounded For Loops (Indefinite iterations) (Unbounded = means It can grow up to any size)
-* 2.External Calls
-* 3.Return values
+### Uncover these bugs using this tip:
 
-<h2>Areas where chances of bugs. <br> </h2>
-- 1.External calls without gas stipends <br>
-- 2.Looping through externally manipulated mappings or arrays <br>
-- 3.Untrusted reverts.<br>
-- 4. Calling a function that doesn't exist in the blockchain universe.
+Ask Yourself these questions:
 
-<h2>External calls:</h2> These can be anything from transferring ether to calling a third-party contract. Evaluate ways these external calls could fail, leading to an incomplete transaction.
+<b> METHOD 1 :  For Unbounded Loops
 
-<h2>Questions to ask?<br> </h2>
+- 1.  In this for loop (this iteratable thing) is bounded to a certain size or not ?
+- 2. If NOT , can a user can add arbitrary amount of items to that list ?
+- 3. If YES , then how much it will cost the user to do that ?
+- 4. If a user can add a like a 1000 items on that list by using a very cheap amount of money THEN you have a critical or 
+     High bug Found.
 
-* Is the iterable entity bounded by size?
-* Can a user append arbitrary items to the list?
-* How much does it cost the user to do so?
+<b> METHOD 2:  For External Calls
 
-<h2>Mitigation <br> </h2>
-- Try to not make unbounded loops. <br>
-- Check for every Scenerio
+- 1. Lookout for any external calls( It maybe sending some money or just making an external call to other contract or user)
+- 2. Is there a way for these calls to fail (revert). Is there any revert there.
+- 3. If YES , Then how can this affect the system ? (like : preventing liquidations or ...)
 
-<h2>CTFs <br> </h2>
-<h2>Writing a POC For DOS attack. <br></h2>
-<h2>Writing a Professional Report. <br></h2>
-<h2>Simple Reports: <br></h2>
+HOW A Call Can Fail : 
 
-Low : <https://solodit.xyz/issues/n-03-using-while-for-unbounded-loops-isnt-recommended-code4rena-reserve-reserve-git><br>
-Medium : <https://solodit.xyz/issues/m-01-looping-over-unbounded-array-can-result-in-a-state-of-dos-pashov-none-lizardstarking-markdown> <br>
-High : <https://solodit.xyz/issues/trst-h-5-its-possible-to-dos-voting-for-the-whole-protocol-trust-security-none-satinexchange-markdown> <br>
-High : <https://solodit.xyz/issues/h-04-unbounded-loop-in-_removenft-could-lead-to-a-griefingdos-attack-code4rena-visor-visor-contest-git>
+1. Sending ether to the contract that doesn't accept it.
+2. Calling a function that doesn't exist. 
+3. The external call execution runs out of gas.
+  
+## Reports :
 
-<h2> An amazing medium article <br></h2>
+### HIGH :
 
-By bloqarl : <https://medium.com/@bloqarl/uncovering-real-life-examples-of-denial-of-service-attacks-on-smart-contrac8bc220c2cdd0><br>
+-  Unbounded Loops (leads to DOS) : https://solodit.xyz/issues/h-04-unbounded-loop-in-_removenft-could-lead-to-a-griefingdos-attack-code4rena-visor-visor-contest-git
 
-<h2><b>Resources: <br></h2>
+- Mappings can also be un-bounded : https://solodit.xyz/issues/m-07-processfees-may-fail-due-to-exceed-gas-limit-code4rena-juicebox-juicebox-v2-contest-git
+- External Calls inside a loop  : 
+
+### MEDIUM :
+ 
+- Anything other things can also cause DOS  : https://solodit.xyz/issues/m-01-incorrect-unlocktime-can-dos-withdrawgovernanceasset-code4rena-behodler-behodler-contest-git
+
+-
