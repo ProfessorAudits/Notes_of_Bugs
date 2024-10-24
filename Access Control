@@ -1,0 +1,35 @@
+# Access Control Bugs Reports
+
+## HIGH
+
+- Improper Access Control on parameters : https://solodit.xyz/issues/h-21-lack-of-access-control-allow-attacker-to-mintfungible-and-mintsynth-with-other-users-wallet-balance-code4rena-vader-protocol-vader-protocol-contest-git.
+
+## Medium 
+
+- Improper Access Control on function (DAO is used in this Protocol): https://solodit.xyz/issues/m-03-improper-access-control-of-claimallformember-allows-anyone-to-reduce-the-weight-of-a-member-code4rena-spartan-protocol-spartan-protocol-contest-git
+
+- Lack of Access Control : https://solodit.xyz/issues/m-13-lack-of-access-control-in-the-parameterize-function-of-proposal-contracts-code4rena-behodler-behodler-contest-git
+
+- Bypassing Access Control through Cross-function : https://solodit.xyz/issues/m-11-burn-access-control-can-be-bypassed-code4rena-yieldy-yieldy-contest-git
+
+## Low
+
+- Missing Role Based Access Control : https://solodit.xyz/issues/missing-role-based-access-control-halborn-biconomy-vesting-audit-pdf
+
+- Missing OnlyOwner Check on some functions : https://solodit.xyz/issues/lack-of-access-control-on-the-management-parameters-halborn-egl-pdf
+
+- Unnecessary Access Control : https://solodit.xyz/issues/l07-unnecessary-access-control-openzeppelin-celo-contracts-audit-release-4-markdown
+
+
+### Tips to find the issue :
+
+- 1. Collect all the `external` or `public` functions.
+- 2. See who can call the function (like : can anyone call it or onlyOwner)
+- 3. Check who is intended to call that function.
+- 4. Pay closer look where there is a lack of zero address check . how it can impact the protocol?
+
+### Ask these questions to check who is intended to call the function:
+
+ - 1.  What this function does?
+ - 2. What is the Impact of this function on the protocol?
+ - 3.  How the protocol could act if this function is not in the protocol ?
