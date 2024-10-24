@@ -1,0 +1,15 @@
+# External Call attacks(Unexpected Return Values) & More 
+
+## Reports:
+
+### Medium:
+ERC-20 return values not checked : https://solodit.xyz/issues/m-02-erc20-return-values-not-checked-code4rena-yaxis-yaxis-contest-git
+
+Unhandled return values of transfer and transferFrom : https://solodit.xyz/issues/m-01-unhandled-return-values-of-transfer-and-transferfrom-code4rena-inverse-finance-inverse-finance-contest-git
+
+## BUGS :
+
+- DOS (loop, Fail )
+- Re-entrancy (CEI) 
+- Return values
+- Gas
