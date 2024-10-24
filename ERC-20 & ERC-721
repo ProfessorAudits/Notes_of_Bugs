@@ -1,0 +1,17 @@
+# ERC-20 & 721 Bugs
+
+## Search the common functions of ERC-20 & 721 in solodit (Like: approve(),transferFrom in solodit).
+
+## Checklist for ERC-20 : https://github.com/d-xo/weird-erc20
+
+## Bugs :
+
+1. Missing return values & returning false when transaction fails instead of reverting : https://solodit.xyz/issues/m-01-unhandled-return-value-of-transferfrom-in-timelockerc20-could-lead-to-fund-loss-for-recipients-code4rena-visor-visor-contest-git
+
+2.  fee on transfer : 
+
+- https://solodit.xyz/issues/m-02-fee-on-transfer-tokens-can-lead-to-incorrect-approval-code4rena-kuiper-kuiper-contest-git
+
+ - https://solodit.xyz/issues/m-02-fee-on-transfer-tokens-can-lead-to-incorrect-approval-code4rena-kuiper-kuiper-contest-git
+
+- https://solodit.xyz/issues/m-02-protocol-doesnt-handle-fee-on-transfer-tokens-code4rena-backed-protocol-backed-protocol-contest-git
