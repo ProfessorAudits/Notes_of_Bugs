@@ -1,0 +1,20 @@
+# Front-running:
+
+## Tips to find it :
+
+- 1. Pay attention to those areas which can lead to a jump on TVL(Total Value Locked) on a protocol.
+- 2. Think If I front-run it what will happen i.e : A user get a negative effect or protocol gets a negative effect or it is 
+        simply incentivizing the malicious attacker.
+
+## Reports :
+
+- https://solodit.xyz/issues/h-13-tokens-can-be-stolen-by-frontrunning-vestedrewardpoolvest-and-vestedrewardpoollock-code4rena-mochi-mochi-contest-git
+
+- https://solodit.xyz/issues/m-08-frontrunning-publiclockinitialize-can-prevent-upgrades-due-to-insufficient-access-control-code4rena-unlock-protocol-unlock-protocol-contest-git
+
+## Sandwich/Slipage Reports :
+
+## Tips to find it :
+ - 1. When auditing any AMM protocol or any protocol interacting with any AMM look for it.
+
+- Read the GPT summary for better understanding : https://solodit.xyz/issues/h-09-treasury-is-vulnerable-to-sandwich-attack-code4rena-mochi-mochi-contest-git
