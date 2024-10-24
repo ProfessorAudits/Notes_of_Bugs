@@ -1,0 +1,46 @@
+# Understanding DOS Attacks:
+
+<h2>What is DOS.<br></h2>
+Denial of Service attacks target computer systems and networks,  Attacker makes unnecessary requests to cause a disruption in the service provided . In blockchain " Denial of Service attack can significantly delay any contract'sfunctionality by making it very gas-intensive therefore, it is expensive to use" . 
+<br> <br> 
+If the function  exceeds the block gas limit, it causes the DOS to happen. When causing a function to not work properly as it intend to means that there is a DOS.
+
+<h2>Some Important areas to look for Dos attacks. <br> </h2>
+
+* 1.Unbounded For Loops (Indefinite iterations) (Unbounded = means It can grow up to any size)
+* 2.External Calls
+* 3.Return values
+
+<h2>Areas where chances of bugs. <br> </h2>
+- 1.External calls without gas stipends <br>
+- 2.Looping through externally manipulated mappings or arrays <br>
+- 3.Untrusted reverts.<br>
+- 4. Calling a function that doesn't exist in the blockchain universe.
+
+<h2>External calls:</h2> These can be anything from transferring ether to calling a third-party contract. Evaluate ways these external calls could fail, leading to an incomplete transaction.
+
+<h2>Questions to ask?<br> </h2>
+
+* Is the iterable entity bounded by size?
+* Can a user append arbitrary items to the list?
+* How much does it cost the user to do so?
+
+<h2>Mitigation <br> </h2>
+- Try to not make unbounded loops. <br>
+- Check for every Scenerio
+
+<h2>CTFs <br> </h2>
+<h2>Writing a POC For DOS attack. <br></h2>
+<h2>Writing a Professional Report. <br></h2>
+<h2>Simple Reports: <br></h2>
+
+Low : <https://solodit.xyz/issues/n-03-using-while-for-unbounded-loops-isnt-recommended-code4rena-reserve-reserve-git><br>
+Medium : <https://solodit.xyz/issues/m-01-looping-over-unbounded-array-can-result-in-a-state-of-dos-pashov-none-lizardstarking-markdown> <br>
+High : <https://solodit.xyz/issues/trst-h-5-its-possible-to-dos-voting-for-the-whole-protocol-trust-security-none-satinexchange-markdown> <br>
+High : <https://solodit.xyz/issues/h-04-unbounded-loop-in-_removenft-could-lead-to-a-griefingdos-attack-code4rena-visor-visor-contest-git>
+
+<h2> An amazing medium article <br></h2>
+
+By bloqarl : <https://medium.com/@bloqarl/uncovering-real-life-examples-of-denial-of-service-attacks-on-smart-contrac8bc220c2cdd0><br>
+
+<h2><b>Resources: <br></h2>
